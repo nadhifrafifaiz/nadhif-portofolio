@@ -6,22 +6,52 @@
   padding: 0;
   margin: 0;
 }
-
+/* Default theme (Light) */
 :root {
-  --color-primary: #ffffff; /* White */
-  --color-secondary: #222222; /* Dark Gray for contrast */
-  --color-accent: #eab308; /* Gold - slightly darker for better contrast */
+  --color-primary: #3b82f6; /* Blue */
+  --color-secondary: #1e40af;
+  --color-accent: #e0f2fe;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Merriweather', serif;
 }
 
-.theme-dark {
-  --color-primary: #18181b; /* Dark Gray (Not pure black, easier on eyes) */
-  --color-secondary: #f5f5f5; /* Light Gray for strong contrast */
-  --color-accent: #facc15; /* Yellow Gold */
+/* Dark theme */
+.dark {
+  --color-primary: #1e293b; /* Dark Mode */
+  --color-secondary: #334155;
+  --color-accent: #64748b;
+
+  --font-sans: 'Arial', sans-serif;
+  --font-serif: 'Georgia', serif;
 }
 
-.theme-light {
-  --color-primary: #f3f4f6; /* Soft Gray (Better than pure gray for contrast) */
-  --color-secondary: #111827; /* Deep Navy Gray */
-  --color-accent: #facc15; /* Gold */
+/* Theme Blue */
+.theme-blue {
+  --color-primary: #3b82f6;
+  --color-secondary: #1e40af;
+  --color-accent: #e0f2fe;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Merriweather', serif;
 }
 
+/* Theme Green */
+.theme-green {
+  --color-primary: #22c55e;
+  --color-secondary: #166534;
+  --color-accent: #bbf7d0;
+
+  --font-sans: 'Roboto', sans-serif;
+  --font-serif: 'Georgia', serif;
+}
+
+/* Theme Red */
+.theme-red {
+  --color-primary: #ef4444;
+  --color-secondary: #7f1d1d;
+  --color-accent: #fecaca;
+
+  --font-sans: 'Arial', sans-serif;
+  --font-serif: 'Times New Roman', serif;
+}

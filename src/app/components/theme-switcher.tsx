@@ -1,50 +1,129 @@
+// "use client";
+// import { useEffect, useState } from "react";
+
+// type Theme = "light" | "dark";
+
+// const themes: Record<Theme, { class: string; font: string }> = {
+//   light: { class: "theme-light", font: "font-inter" },
+//   dark: { class: "theme-dark", font: "font-roboto" },
+// };
+
+// export default function ThemeSwitcher() {
+//   const [theme, setTheme] = useState<Theme>(() => {
+//     if (typeof window !== "undefined") {
+//       return (localStorage.getItem("theme") as Theme) || "light";
+//     }
+//     return "light";
+//   });
+
+//   useEffect(() => {
+//     // Set theme class on document
+//     document.documentElement.className = themes[theme].class;
+
+//     // Remove any class starting with 'font-' and add the new font class
+//     document.body.className =
+//       document.body.className
+//         .split(" ")
+//         .filter((className) => !className.startsWith("font-"))
+//         .join(" ") + ` ${themes[theme].font}`;
+
+//     // Store the theme preference in localStorage
+//     localStorage.setItem("theme", theme);
+//   }, [theme]);
+
+//   return (
+//     <div className="flex gap-4 p-4">
+//       <button
+//         onClick={() => setTheme("light")}
+//         className="bg-primary rounded p-2 text-white"
+//       >
+//         Light Theme
+//       </button>
+//       <button
+//         onClick={() => setTheme("dark")}
+//         className="bg-secondary rounded p-2 text-white"
+//       >
+//         Dark Theme
+//       </button>
+//     </div>
+//   );
+// }
+
 "use client";
+
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-type Theme = "light" | "dark";
+const themes = ["light", "dark", "theme-blue", "theme-green", "theme-red"];
+const fonts = ["sans", "mono"]; // Adding "mono" for Roboto Mono font
 
-const themes: Record<Theme, { class: string; font: string }> = {
-  light: { class: "theme-light", font: "font-inter" },
-  dark: { class: "theme-dark", font: "font-roboto" },
-};
-
-export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window !== "undefined") {
-      return (localStorage.getItem("theme") as Theme) || "light";
-    }
-    return "light";
-  });
+export default function ThemeSelector() {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [font, setFont] = useState("sans");
 
   useEffect(() => {
-    // Set theme class on document
-    document.documentElement.className = themes[theme].class;
+    setMounted(true);
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) setTheme(savedTheme);
 
-    // Remove any class starting with 'font-' and add the new font class
-    document.body.className =
-      document.body.className
-        .split(" ")
-        .filter((className) => !className.startsWith("font-"))
-        .join(" ") + ` ${themes[theme].font}`;
+    const savedFont = localStorage.getItem("font");
+    if (savedFont) setFont(savedFont);
+  }, [setTheme]);
 
-    // Store the theme preference in localStorage
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+  useEffect(() => {
+    if (mounted) {
+      // Store the theme and font in localStorage for persistence
+      localStorage.setItem("theme", theme!);
+      localStorage.setItem("font", font);
+
+      // Apply the theme class dynamically
+      document.documentElement.classList.remove(...themes);
+      document.documentElement.classList.add(theme!);
+
+      // Apply the font dynamically using font class
+      document.body.classList.remove("font-sans", "font-mono");
+      if (font === "sans") {
+        document.body.classList.add("font-sans");
+      } else {
+        document.body.classList.add("font-mono");
+      }
+    }
+  }, [mounted, theme, font]);
+
+  if (!mounted) return null; // Prevents hydration mismatch
 
   return (
-    <div className="flex gap-4 p-4">
-      <button
-        onClick={() => setTheme("light")}
-        className="bg-primary rounded p-2 text-white"
-      >
-        Light Theme
-      </button>
-      <button
-        onClick={() => setTheme("dark")}
-        className="bg-secondary rounded p-2 text-white"
-      >
-        Dark Theme
-      </button>
+    <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2">
+        <span className="text-sm">Theme:</span>
+        <select
+          value={theme}
+          onChange={(e) => setTheme(e.target.value)}
+          className="rounded-md border p-2"
+        >
+          {themes.map((t) => (
+            <option key={t} value={t}>
+              {t.charAt(0).toUpperCase() + t.slice(1)}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="flex items-center gap-2">
+        <span className="text-sm">Font:</span>
+        <select
+          value={font}
+          onChange={(e) => setFont(e.target.value)}
+          className="rounded-md border p-2"
+        >
+          {fonts.map((f) => (
+            <option key={f} value={f}>
+              {f.charAt(0).toUpperCase() + f.slice(1)}
+            </option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 }
