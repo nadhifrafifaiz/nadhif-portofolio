@@ -12,6 +12,9 @@
   --color-secondary: #1e40af;
   --color-accent: #e0f2fe;
 
+  --color-background: #ffffff;
+  --color-text: #1e293b;
+
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Merriweather', serif;
 }
@@ -21,6 +24,9 @@
   --color-primary: #1e293b; /* Dark Mode */
   --color-secondary: #334155;
   --color-accent: #64748b;
+
+  --color-background: #0f172a;
+  --color-text: #f1f5f9;
 
   --font-sans: 'Arial', sans-serif;
   --font-serif: 'Georgia', serif;
@@ -32,6 +38,9 @@
   --color-secondary: #1e40af;
   --color-accent: #e0f2fe;
 
+  --color-background: #eff6ff;
+  --color-text: #1e293b;
+
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Merriweather', serif;
 }
@@ -42,6 +51,9 @@
   --color-secondary: #166534;
   --color-accent: #bbf7d0;
 
+  --color-background: #f0fdf4;
+  --color-text: #14532d;
+
   --font-sans: 'Roboto', sans-serif;
   --font-serif: 'Georgia', serif;
 }
@@ -51,6 +63,9 @@
   --color-primary: #ef4444;
   --color-secondary: #7f1d1d;
   --color-accent: #fecaca;
+
+  --color-background: #fef2f2;
+  --color-text: #7f1d1d;
 
   --font-sans: 'Arial', sans-serif;
   --font-serif: 'Times New Roman', serif;
