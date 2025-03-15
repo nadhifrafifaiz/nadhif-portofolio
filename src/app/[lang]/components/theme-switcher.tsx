@@ -35,13 +35,13 @@ export default function ThemeSwitcher() {
     <div className="flex gap-4 p-4">
       <button
         onClick={() => setTheme("light")}
-        className="bg-primary rounded p-2 text-white"
+        className="rounded bg-primary p-2 text-white"
       >
         Light Theme
       </button>
       <button
         onClick={() => setTheme("dark")}
-        className="bg-secondary rounded p-2 text-white"
+        className="rounded bg-secondary p-2 text-white"
       >
         Dark Theme
       </button>

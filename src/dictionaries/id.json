@@ -1,0 +1,10 @@
+{
+    "server-component": {
+      "welcome": "Selamat Datang"
+    },
+    "counter": {
+      "increment": "Tambah",
+      "decrement": "Kurang"
+    }
+  }
+  

@@ -8,9 +8,9 @@
 }
 
 :root {
-  --color-primary: #ffffff; /* White */
-  --color-secondary: #222222; /* Dark Gray for contrast */
-  --color-accent: #eab308; /* Gold - slightly darker for better contrast */
+  --color-primary: #f3f4f6; /* Soft Gray (Better than pure gray for contrast) */
+  --color-secondary: #111827; /* Deep Navy Gray */
+  --color-accent: #facc15; /* Gold */
 }
 
 .theme-dark {
