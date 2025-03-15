@@ -1,6 +1,5 @@
 import { createClient } from "@/utils/supabase/server";
 import HomepageHero from "./homepage/components/homepage-hero";
-import TopBar from "./components/top-bar";
 import { Metadata } from "next";
 import { Locale } from "../../../i18n-config";
 import { getDictionary } from "../../../get-dictionary";
@@ -19,7 +18,6 @@ export default async function Home(props: {
   return (
     <>
       {dictionary["server-component"].welcome}
-      <TopBar />
       <HomepageHero />
     </>
   );

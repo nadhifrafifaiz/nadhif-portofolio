@@ -2,6 +2,8 @@ import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeSwitcher from "./components/theme-switcher";
 import { i18n, Locale } from "../../../i18n-config";
+import { ThemeProvider } from "next-themes";
+import TopBar from "./components/top-bar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,9 +27,17 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode; params: { lang: Locale } }>) {
   return (
     <html lang={params.lang}>
-      <body className={`${inter.variable} ${roboto_mono.variable} font-roboto`}>
-        <ThemeSwitcher />
-        {children}
+      <body className="bg-background">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          themes={["light", "dark", "theme-blue", "theme-green", "theme-red"]}
+          storageKey="theme"
+        >
+          <ThemeSwitcher />
+          <TopBar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
