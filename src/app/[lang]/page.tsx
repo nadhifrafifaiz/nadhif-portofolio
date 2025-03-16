@@ -1,8 +1,9 @@
 import { createClient } from "@/utils/supabase/server";
 import HomepageHero from "./homepage/components/homepage-hero";
 import { Metadata } from "next";
-import { Locale } from "../../../i18n-config";
-import { getDictionary } from "../../../get-dictionary";
+
+import { Locale } from "@/i18n-config";
+import { getDictionary } from "@/get-dictionary";
 
 export const metadata: Metadata = {
   title: "Nadhif Rafifaiz K",
@@ -18,6 +19,7 @@ export default async function Home(props: {
   return (
     <>
       {dictionary["server-component"].welcome}
+      IM HOOME
       <HomepageHero />
     </>
   );

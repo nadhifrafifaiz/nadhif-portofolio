@@ -12,9 +12,9 @@ export default function TopBar() {
   };
   return (
     <header className="relative z-50">
-      <div className="bg-primary text-accent flex items-center justify-between px-4 py-3">
-        {/* <div className="text-lg font-bold">Logos</div> */}
-        <TreasureHunt />
+      <div className="text-text flex items-center justify-between px-4 py-3">
+        <div className="text-lg font-bold">Logos</div>
+        {/* <TreasureHunt /> */}
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}

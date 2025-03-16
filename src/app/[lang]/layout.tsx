@@ -1,21 +1,10 @@
-import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeSwitcher from "./components/theme-switcher";
-import { i18n, Locale } from "../../../i18n-config";
+import { i18n, Locale } from "@/i18n-config";
+
 import { ThemeProvider } from "next-themes";
 import TopBar from "./components/top-bar";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const roboto_mono = Roboto_Mono({
-  subsets: ["latin"],
-  variable: "--font-roboto-mono",
-  display: "swap",
-});
+import LocaleSwitcher from "./components/locale-switcher";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -34,7 +23,11 @@ export default function RootLayout({
           themes={["light", "dark", "theme-blue", "theme-green", "theme-red"]}
           storageKey="theme"
         >
-          <ThemeSwitcher />
+          <div className="flex items-center justify-between">
+            <LocaleSwitcher />
+
+            <ThemeSwitcher />
+          </div>
           <TopBar />
           {children}
         </ThemeProvider>

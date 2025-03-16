@@ -1,7 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import { Metadata } from "next";
-import { Locale } from "../../../../i18n-config";
-import { getDictionary } from "../../../../get-dictionary";
+import { Locale } from "@/i18n-config";
+import { getDictionary } from "@/get-dictionary";
 
 export const metadata: Metadata = {
   title: "Nadhif Rafifaiz K",
@@ -17,7 +17,7 @@ export default async function About(props: {
   return (
     <>
       {dictionary["server-component"].welcome}
-      ABOUT
+      IM ABOUT
     </>
   );
 }
