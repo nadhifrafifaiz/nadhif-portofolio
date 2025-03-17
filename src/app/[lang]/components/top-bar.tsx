@@ -3,8 +3,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import TreasureHunt from "./treasure-hunt/treasure-hunt-logo";
+import useSettingStore from "@/store/settings";
 
 export default function TopBar() {
+  const { setIsThemeOpen, isThemeOpen } = useSettingStore();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -54,6 +56,12 @@ export default function TopBar() {
           <a href="#contact" className="hover:text-gray-300">
             Contact
           </a>
+          <button
+            onClick={() => setIsThemeOpen(!isThemeOpen)}
+            className="hover:text-gray-300"
+          >
+            Theme
+          </button>
         </nav>
       </div>
       {/* Fullscreen Overlay for Mobile Menu */}
