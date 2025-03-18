@@ -41,8 +41,6 @@
   --color-background: #eff6ff;
   --color-text: #1e293b;
 
-  --font-sans: 'Inter', sans-serif;
-  --font-serif: 'Merriweather', serif;
 }
 
 /* Theme Green */
@@ -53,9 +51,6 @@
 
   --color-background: #f0fdf4;
   --color-text: #14532d;
-
-  --font-sans: 'Roboto', sans-serif;
-  --font-serif: 'Georgia', serif;
 }
 
 /* Theme Red */
@@ -67,6 +62,4 @@
   --color-background: #fef2f2;
   --color-text: #7f1d1d;
 
-  --font-sans: 'Arial', sans-serif;
-  --font-serif: 'Times New Roman', serif;
 }

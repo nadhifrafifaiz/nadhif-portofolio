@@ -1,5 +1,4 @@
 import "./globals.css";
-import ThemeSwitcher from "./components/theme-switcher";
 import { i18n, Locale } from "@/i18n-config";
 
 import { ThemeProvider } from "next-themes";
@@ -27,7 +26,7 @@ export default function RootLayout({
           <ThemeOptions />
           <div className="flex items-center justify-between">
             <LocaleSwitcher />
-            <ThemeSwitcher />
+            {/* <ThemeSwitcher /> */}
           </div>
           <TopBar />
           {children}

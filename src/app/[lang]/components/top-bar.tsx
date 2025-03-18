@@ -14,7 +14,7 @@ export default function TopBar() {
   };
   return (
     <header className="relative z-50">
-      <div className="text-text flex items-center justify-between px-4 py-3">
+      <div className="flex items-center justify-between px-4 py-3 text-text">
         <div className="text-lg font-bold">Logos</div>
         {/* <TreasureHunt /> */}
         {/* Mobile Menu Button */}
@@ -65,13 +65,16 @@ export default function TopBar() {
         </nav>
       </div>
       {/* Fullscreen Overlay for Mobile Menu */}
-      {isMenuOpen && (
-        <AnimatePresence>
+      <AnimatePresence>
+        {isMenuOpen && (
           <motion.div
-            initial={{ x: "-100%" }} // Start off-screen on the left
-            animate={{ x: 0 }} // Animate to its original position
-            exit={{ x: "-100%" }} // Exit by sliding back to the left
-            transition={{ duration: 0.1, ease: "easeOut" }}
+            initial={{ x: "-100%" }} // Start off-screen
+            animate={{ x: 0 }} // Slide in
+            exit={{
+              x: "-100%",
+              transition: { type: "spring", stiffness: 100, damping: 20 },
+            }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
             className="fixed inset-0 flex bg-black bg-opacity-75"
           >
             <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 sm:hidden">
@@ -106,12 +109,21 @@ export default function TopBar() {
                   <a href="#contact" className="hover:text-gray-300">
                     Contact
                   </a>
+                  <button
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      setIsThemeOpen(!isThemeOpen);
+                    }}
+                    className="hover:text-gray-300"
+                  >
+                    Theme
+                  </button>
                 </nav>
               </div>
             </div>
           </motion.div>
-        </AnimatePresence>
-      )}
+        )}
+      </AnimatePresence>
     </header>
   );
 }

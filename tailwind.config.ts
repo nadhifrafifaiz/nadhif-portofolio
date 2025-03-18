@@ -16,10 +16,6 @@ const config: Config = {
         background: "var(--color-background)",
         text: "var(--color-text)",
       },
-      fontFamily: {
-        sans: "var(--font-sans)",
-        serif: "var(--font-serif)",
-      },
     },
   },
   plugins: [],
