@@ -14,8 +14,8 @@ export default function TopBar() {
   };
   return (
     <header className="relative z-50">
-      <div className="flex items-center justify-between px-4 py-3 text-text">
-        <div className="text-lg font-bold">Logos</div>
+      <div className="mx-auto flex w-[90%] max-w-[1200px] items-center justify-between py-4 text-text sm:py-[50px]">
+        <div className="text-lg font-bold">Nadhif Rafifaiz</div>
         {/* <TreasureHunt /> */}
         {/* Mobile Menu Button */}
         <button
@@ -46,15 +46,18 @@ export default function TopBar() {
           </svg>
         </button>
         {/* Desktop Links */}
-        <nav className="hidden space-x-4 sm:flex">
+        <nav className="hidden space-x-8 sm:flex">
           <a href="#home" className="hover:text-gray-300">
             Home
           </a>
+          <a href="#projects" className="hover:text-gray-300">
+            Projects
+          </a>
+          <a href="#posts" className="hover:text-gray-300">
+            Posts
+          </a>
           <a href="#about" className="hover:text-gray-300">
             About
-          </a>
-          <a href="#contact" className="hover:text-gray-300">
-            Contact
           </a>
           <button
             onClick={() => setIsThemeOpen(!isThemeOpen)}
@@ -103,18 +106,21 @@ export default function TopBar() {
                   <a href="#home" className="hover:text-gray-300">
                     Home
                   </a>
+                  <a href="#projects" className="hover:text-gray-300">
+                    Projects
+                  </a>
+                  <a href="#posts" className="hover:text-gray-300">
+                    Posts
+                  </a>
                   <a href="#about" className="hover:text-gray-300">
                     About
-                  </a>
-                  <a href="#contact" className="hover:text-gray-300">
-                    Contact
                   </a>
                   <button
                     onClick={() => {
                       setIsMenuOpen(false);
                       setIsThemeOpen(!isThemeOpen);
                     }}
-                    className="hover:text-gray-300"
+                    className="text-start hover:text-gray-300"
                   >
                     Theme
                   </button>

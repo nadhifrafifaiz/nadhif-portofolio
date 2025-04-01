@@ -16,7 +16,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode; params: { lang: Locale } }>) {
   return (
     <html lang={params.lang}>
-      <body className="bg-background">
+      <body className="min-w-[400px] bg-background">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -24,12 +24,15 @@ export default function RootLayout({
           storageKey="theme"
         >
           <ThemeOptions />
-          <div className="flex items-center justify-between">
-            <LocaleSwitcher />
-            {/* <ThemeSwitcher /> */}
-          </div>
           <TopBar />
-          {children}
+          <div className="mx-auto max-w-[1200px]">
+            {children}
+
+            <div className="flex items-center justify-between">
+              <LocaleSwitcher />
+              {/* <ThemeSwitcher /> */}
+            </div>
+          </div>
         </ThemeProvider>
       </body>
     </html>

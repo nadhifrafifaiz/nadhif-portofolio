@@ -18,8 +18,8 @@ export default async function Home(props: {
   const dictionary = await getDictionary(lang);
   return (
     <>
-      {dictionary["server-component"].welcome}
-      IM HOOME
+      {/* {dictionary["server-component"].welcome}
+      IM HOOME */}
       <HomepageHero />
     </>
   );
