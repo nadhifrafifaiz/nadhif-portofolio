@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -61,5 +64,15 @@
 
   --color-background: #fef2f2;
   --color-text: #7f1d1d;
+
+}
+/* Theme Brown */
+.theme-brown {
+  --color-primary: #ef4444;
+  --color-secondary: #7f1d1d;
+  --color-accent: #A27B5C;
+
+  --color-background: #2C3639;
+  --color-text: #DCD7C9;
 
 }

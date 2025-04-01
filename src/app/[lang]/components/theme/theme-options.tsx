@@ -81,6 +81,21 @@ const THEMES = [
       serif: "'Times New Roman', serif",
     },
   },
+  {
+    label: "Theme Brown",
+    value: "theme-brown",
+    colors: {
+      primary: "#ef4444",
+      secondary: "#7f1d1d",
+      accent: "#A27B5C",
+      background: "#2C3639",
+      text: "#DCD7C9",
+    },
+    fonts: {
+      sans: "'Arial', sans-serif",
+      serif: "'Times New Roman', serif",
+    },
+  },
 ];
 
 export default function ThemeOptions() {
@@ -125,7 +140,7 @@ export default function ThemeOptions() {
           : { height: 0, opacity: 0 }
       }
       transition={{ type: "spring", stiffness: 120, damping: 14 }}
-      className="overflow-hidden bg-accent pl-4"
+      className="overflow-hidden bg-secondary pl-4"
     >
       <div
         className="-mr-8 flex h-full items-center gap-4 overflow-x-auto px-8 md:gap-10"
@@ -133,19 +148,6 @@ export default function ThemeOptions() {
           transform: "translateX(-2rem)", // Move the content left by 2rem (or adjust as needed)
         }}
       >
-        {THEMES.map((theme) => (
-          <button
-            key={theme.value}
-            className="h-20 w-32 flex-shrink-0 rounded focus:outline-none"
-            style={{
-              backgroundColor: theme.colors.primary,
-              color: theme.colors.text,
-            }}
-            onClick={() => setTheme(theme.value)}
-          >
-            {theme.label}
-          </button>
-        ))}
         {THEMES.map((theme) => (
           <button
             key={theme.value}

@@ -1,3 +1,4 @@
+import { epilogue, playfair_display } from "@/app/fonts";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -9,6 +10,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        playfair: ["var(--font-playfair)", "serif"],
+        epilogue: ["var(--font-epilogue)", "sans-serif"],
+        "open-sans": ["var(--font-open-sans)", "sans-serif"],
+        // playfair: ["Playfair Display"],
+        // epilogue: ["Epilogue"],
+      },
       colors: {
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",

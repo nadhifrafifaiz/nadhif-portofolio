@@ -3,7 +3,14 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-const themes = ["light", "dark", "theme-blue", "theme-green", "theme-red"];
+const themes = [
+  "light",
+  "dark",
+  "theme-blue",
+  "theme-green",
+  "theme-red",
+  "theme-brown",
+];
 const fonts = ["sans", "mono"]; // Adding "mono" for Roboto Mono font
 
 export default function ThemeSelector() {
