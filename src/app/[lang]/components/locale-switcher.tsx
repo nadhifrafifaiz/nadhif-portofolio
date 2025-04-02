@@ -1,11 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { i18n } from "@/i18n-config";
+import { useParams, usePathname } from "next/navigation";
+import { i18n, Locale } from "@/i18n-config";
+import { EnglishFlag, IndonesianFlag } from "./flags";
 
 export default function LocaleSwitcher() {
   const pathName = usePathname();
+  const params = useParams();
+  const activeLang = params.lang as Locale;
 
   const redirectedPathName = (locale: string) => {
     if (!pathName) return "/";
@@ -36,15 +39,18 @@ export default function LocaleSwitcher() {
 
   return (
     <div className="flex h-full items-center justify-center gap-4">
-      {i18n.locales.map((locale) => (
-        <Link
-          key={locale}
-          href={redirectedPathName(locale)}
-          className="rounded-lg border border-gray-600 bg-black px-4 py-2 text-white transition-all duration-300 hover:border-gray-400 hover:bg-gray-800"
-        >
-          {locale.toUpperCase()}
-        </Link>
-      ))}
+      <Link
+        href={redirectedPathName(
+          i18n.locales.filter((l) => l !== activeLang)[0],
+        )}
+        className="bg-bg-offset flex h-10 w-10 items-center justify-center rounded-full hover:bg-primary"
+      >
+        {activeLang === "id" ? (
+          <EnglishFlag className="h-5 w-5" />
+        ) : activeLang === "en" ? (
+          <IndonesianFlag className="h-5 w-5" />
+        ) : null}
+      </Link>
     </div>
   );
 }

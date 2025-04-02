@@ -4,47 +4,43 @@ import { i18n, Locale } from "@/i18n-config";
 import { ThemeProvider } from "next-themes";
 import TopBar from "./components/top-bar";
 import LocaleSwitcher from "./components/locale-switcher";
-import ThemeOptions from "./components/theme/theme-options";
+// import ThemeOptions from "./components/theme/theme-options";
 import { epilogue, open_sans, playfair_display } from "../fonts";
+import { getDictionary } from "@/get-dictionary";
+import DictionaryProvider from "@/dictionaries/dictionary-provider";
+import dynamic from "next/dynamic";
+import { THEMES_SELECTIONS } from "@/utils/themes";
 
+const ThemeOptions = dynamic(() => import("./components/theme/theme-options"), {
+  ssr: false,
+});
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: Readonly<{ children: React.ReactNode; params: { lang: Locale } }>) {
+  const dictionary = await getDictionary(params.lang);
   return (
     <html
       lang={params.lang}
       className={`${epilogue.variable} ${open_sans.variable} ${playfair_display.variable}`}
     >
-      <body className="min-w-[400px] bg-background">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          themes={[
-            "light",
-            "dark",
-            "theme-blue",
-            "theme-green",
-            "theme-red",
-            "theme-brown",
-          ]}
-          storageKey="theme"
-        >
-          <ThemeOptions />
-          <TopBar lang={params.lang} />
-          <div className="mx-auto">
-            {children}
-
-            <div className="flex items-center justify-between">
-              <LocaleSwitcher />
-              {/* <ThemeSwitcher /> */}
-            </div>
-          </div>
-        </ThemeProvider>
+      <body className="bg-bg min-w-[400px]">
+        <DictionaryProvider dictionary={dictionary}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            themes={THEMES_SELECTIONS}
+            storageKey="theme"
+          >
+            <ThemeOptions />
+            <TopBar lang={params.lang} />
+            <div className="mx-auto">{children}</div>
+          </ThemeProvider>
+        </DictionaryProvider>
       </body>
     </html>
   );

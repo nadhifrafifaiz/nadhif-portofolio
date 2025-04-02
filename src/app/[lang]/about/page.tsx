@@ -16,7 +16,7 @@ export default async function About(props: {
   const dictionary = await getDictionary(lang);
   return (
     <>
-      {dictionary["server-component"].welcome}
+      {/* {dictionary["server-component"].welcome} */}
       IM ABOUT
     </>
   );
