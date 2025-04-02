@@ -40,6 +40,7 @@ export default function LocaleSwitcher() {
   return (
     <div className="flex h-full items-center justify-center gap-4">
       <Link
+        aria-label="Locale"
         href={redirectedPathName(
           i18n.locales.filter((l) => l !== activeLang)[0],
         )}

@@ -21,7 +21,7 @@ export default function HomepageHero() {
           {`${dictionary.home.subtitle[1]}`}
           <HighlightText className="before:bg-primary after:bg-secondary">
             <Link
-              href="https://medium.com/@yourusername"
+              href="https://medium.com/@tech.nadhifrafifaiz"
               target="_blank"
               rel="noopener noreferrer"
               className="text-text"
@@ -32,7 +32,7 @@ export default function HomepageHero() {
           {`${dictionary.home.subtitle[3]}`}
           <HighlightText className="before:bg-primary after:bg-secondary">
             <Link
-              href="https://www.linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/nadhif-rafifaiz-07581b179/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-text"

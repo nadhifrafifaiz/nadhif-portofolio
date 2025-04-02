@@ -43,11 +43,11 @@ export default function TopBar({ lang }: { lang: string }) {
       <div className="mx-auto flex w-[90%] max-w-[1200px] items-center justify-between py-8 text-text sm:py-[50px]">
         <div className="tracking flex items-center gap-3 text-lg font-bold">
           <Image
-            height={200}
-            width={200}
             src="/images/nadhif-logo.webp"
             alt="logo"
-            className="h-12 w-12 rounded-full"
+            width={48}
+            height={48}
+            className="rounded-full"
           />
           <p className="pt-[2px]">Nadhif Rafifaiz</p>
         </div>
@@ -57,6 +57,7 @@ export default function TopBar({ lang }: { lang: string }) {
           <div className="flex gap-1">
             <LocaleSwitcher />
             <button
+              aria-label="Theme"
               onClick={() => setIsThemeOpen(!isThemeOpen)}
               className="bg-bg-offset flex h-10 w-10 items-center justify-center rounded-full hover:bg-primary"
             >
@@ -111,6 +112,7 @@ export default function TopBar({ lang }: { lang: string }) {
           <div className="flex gap-2">
             <LocaleSwitcher />
             <button
+              aria-label="Theme"
               onClick={() => setIsThemeOpen(!isThemeOpen)}
               className="bg-bg-offset flex h-10 w-10 items-center justify-center rounded-full hover:bg-primary"
             >
