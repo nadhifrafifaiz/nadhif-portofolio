@@ -1,10 +1,32 @@
 {
-    "server-component": {
-      "welcome": "Welcome"
+  "theme":{
+    "select":"Select Theme",
+    "options":{
+      "light":"Light",
+      "dark":"Dark",
+      "sunrise-glow":"Sunrise Glow",
+      "matcha-zen":"Matcha Zen",
+      "cyber-neon":"Cyber Neon",
+      "cafe-mocha":"Cafe Mocha",
+      "ember-shadows":"Ember Shadows",
+      "grayscale":"Grayscale"
+    }
+  },
+    "navbar": {
+      "home": "Home",
+      "projects": "Projects",
+      "posts": "Posts",
+      "about": "About"
     },
-    "counter": {
-      "increment": "Increment",
-      "decrement": "Decrement"
+    "home":{
+      "greeting": "Heya, I'm Nadhif",
+      "title": "I Translate Ideas to Websites",
+      "subtitle": {
+        "1": "I'm a website developer at Sprout Digital Lab, a startup based in Indonesia. I also write tips about web development on ",
+        "2": "Medium",
+        "3": " and ",
+        "4": "Linkedin"
+      }    
     }
   }
   

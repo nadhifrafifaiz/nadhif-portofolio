@@ -1,10 +1,31 @@
 {
-    "server-component": {
-      "welcome": "Selamat Datang"
-    },
-    "counter": {
-      "increment": "Tambah",
-      "decrement": "Kurang"
+  "theme":{
+    "select":"Pilih Tema",
+    "options":{
+      "light":"Light",
+      "dark":"Dark",
+      "sunrise-glow":"Sunrise Glow",
+      "matcha-zen":"Matcha Zen",
+      "cyber-neon":"Cyber Neon",
+      "cafe-mocha":"Cafe Mocha",
+      "ember-shadows":"Ember Shadows",
+      "grayscale":"Grayscale"
     }
+  },
+  "navbar": {
+    "home": "Beranda",
+    "projects": "Projek",
+    "posts": "Post",
+    "about": "Tentang"
+  }, 
+  "home":{
+    "greeting": "Halo, Saya Nadhif",
+    "title": "Aku Mengubah Ide Menjadi Web",
+    "subtitle": {
+      "1": "Saya Web Developer di Sprout Digital Lab, sebuah startup yang berbasis di Indonesia. Saya juga menulis tips tentang web. di",
+      "2": "Medium",
+      "3": " dan ",
+      "4": "Linkedin"
+    }    
   }
-  
+}

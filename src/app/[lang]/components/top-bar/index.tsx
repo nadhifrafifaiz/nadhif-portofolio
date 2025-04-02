@@ -1,19 +1,14 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import TreasureHunt from "../treasure-hunt/treasure-hunt-logo";
 import useSettingStore from "@/store/settings";
 import CustomLink from "../custom-link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FaPaintBrush } from "react-icons/fa";
-
-const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Projects", href: "/projects" },
-  { label: "Posts", href: "/posts" },
-  { label: "About", href: "/about" },
-];
+import { useDictionary } from "@/dictionaries/dictionary-provider";
+import LocaleSwitcher from "../locale-switcher";
+import { i18n, Locale } from "@/i18n-config";
 
 export default function TopBar({ lang }: { lang: string }) {
   const pathName = usePathname();
@@ -23,29 +18,51 @@ export default function TopBar({ lang }: { lang: string }) {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const dictionary = useDictionary();
+  const navItems = [
+    { label: dictionary.navbar.home, href: "/" },
+    { label: dictionary.navbar.projects, href: "/projects" },
+    { label: dictionary.navbar.posts, href: "/posts" },
+    { label: dictionary.navbar.about, href: "/about" },
+  ];
+
+  function checkPathname(data: string) {
+    const segments = pathName.split("/");
+    const possibleLocale = segments[1];
+
+    let cleanedPath = pathName;
+    if (i18n.locales.includes(possibleLocale as Locale)) {
+      cleanedPath = `/${segments.slice(2).join("/")}`; // Remove locale prefix
+    }
+
+    return cleanedPath === data;
+  }
 
   return (
     <header className="relative z-50 font-epilogue">
       <div className="mx-auto flex w-[90%] max-w-[1200px] items-center justify-between py-8 text-text sm:py-[50px]">
-        <div className="flex items-center gap-4 text-lg font-bold tracking-wider">
+        <div className="tracking flex items-center gap-3 text-lg font-bold">
           <Image
             height={200}
             width={200}
             src="/images/nadhif-logo.webp"
             alt="logo"
-            className="h-10 w-10 rounded-full"
+            className="h-12 w-12 rounded-full"
           />
           <p className="pt-[2px]">Nadhif Rafifaiz</p>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-4 sm:hidden">
-          <button
-            onClick={() => setIsThemeOpen(!isThemeOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-primary"
-          >
-            <FaPaintBrush className="h-4 w-4 text-text" />
-          </button>
+          <div className="flex gap-1">
+            <LocaleSwitcher />
+            <button
+              onClick={() => setIsThemeOpen(!isThemeOpen)}
+              className="bg-bg-offset flex h-10 w-10 items-center justify-center rounded-full hover:bg-primary"
+            >
+              <FaPaintBrush className="h-4 w-4 text-text" />
+            </button>
+          </div>
           <button
             onClick={toggleMenu}
             className="focus:outline-none"
@@ -82,22 +99,24 @@ export default function TopBar({ lang }: { lang: string }) {
               <CustomLink
                 lang={lang}
                 href={item.href}
-                className="hover:text-gray-300"
+                className="hover:text-accent"
               >
                 {item.label}
               </CustomLink>
-              {pathName === item.href && (
+              {checkPathname(item.href) && (
                 <div className="h-1 w-full bg-primary" />
               )}
             </div>
           ))}
-
-          <button
-            onClick={() => setIsThemeOpen(!isThemeOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-primary"
-          >
-            <FaPaintBrush className="h-4 w-4 text-text" />
-          </button>
+          <div className="flex gap-2">
+            <LocaleSwitcher />
+            <button
+              onClick={() => setIsThemeOpen(!isThemeOpen)}
+              className="bg-bg-offset flex h-10 w-10 items-center justify-center rounded-full hover:bg-primary"
+            >
+              <FaPaintBrush className="h-4 w-4 text-text" />
+            </button>
+          </div>
         </nav>
       </div>
       {/* Fullscreen Overlay for Mobile Menu */}
@@ -111,10 +130,10 @@ export default function TopBar({ lang }: { lang: string }) {
               transition: { type: "spring", stiffness: 100, damping: 20 },
             }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="fixed inset-0 flex bg-background"
+            className="bg-bg fixed inset-0 flex"
           >
-            <div className="fixed inset-0 flex items-center justify-center bg-background sm:hidden">
-              <div className="flex h-full w-full flex-col space-y-12 p-6 text-white">
+            <div className="bg-bg fixed inset-0 flex items-center justify-center sm:hidden">
+              <div className="flex h-full w-full flex-col space-y-12 p-6">
                 <button
                   onClick={toggleMenu}
                   className="self-end text-gray-400 hover:text-white focus:outline-none"
@@ -143,7 +162,7 @@ export default function TopBar({ lang }: { lang: string }) {
                       initial={{ x: -50, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
-                      className="w-fit hover:text-gray-300"
+                      className="w-fit hover:text-accent"
                     >
                       <CustomLink
                         lang={lang}
@@ -152,7 +171,7 @@ export default function TopBar({ lang }: { lang: string }) {
                       >
                         {item.label}
                       </CustomLink>
-                      {pathName === item.href ? (
+                      {checkPathname(item.href) ? (
                         <div className="h-1 w-full bg-primary" />
                       ) : (
                         <div className="h-1 w-full" />
@@ -168,7 +187,7 @@ export default function TopBar({ lang }: { lang: string }) {
                     initial={{ x: -50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
-                    className="text-start hover:text-gray-300"
+                    className="text-start hover:text-accent"
                   >
                     <FaPaintBrush />
                   </motion.button> */}

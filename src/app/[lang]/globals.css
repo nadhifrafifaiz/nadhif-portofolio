@@ -11,68 +11,87 @@
 }
 /* Default theme (Light) */
 :root {
-  --color-primary: #3b82f6; /* Blue */
-  --color-secondary: #1e40af;
-  --color-accent: #e0f2fe;
-
-  --color-background: #ffffff;
-  --color-text: #1e293b;
-
-  --font-sans: 'Inter', sans-serif;
-  --font-serif: 'Merriweather', serif;
+  --color-bg: #ffffff; /* True white */
+  --color-bg-offset: #f5f5f5; /* Soft warm gray */
+  --color-text: #222222; /* Deep charcoal */
+  --color-text-offset: #5c5c5c; /* Muted gray */
+  --color-border: #dcdcdc; /* Light neutral border */
+  --color-primary: #d97706; /* Warm amber */
+  --color-primary-offset: #b45309; /* Deep, earthy orange */
+  --color-secondary: #a0a0a0; /* Softer neutral gray */
+}
+.theme-dark {
+  --color-bg: #0d0d0d; /* Almost true black */
+  --color-bg-offset: #1a1a1a; /* Soft dark gray */
+  --color-text: #eaeaea; /* Off-white */
+  --color-text-offset: #b0b0b0; /* Muted light gray */
+  --color-border: #333333; /* Soft, dark border */
+  --color-primary: #e63946; /* Deep blood red */
+  --color-primary-offset: #b71c1c; /* Darker crimson */
+  --color-secondary: #5a5a5a; /* Mid-gray */
+}
+.theme-sunrise-glow {
+  --color-bg: #fff7e6; /* Soft morning glow */
+  --color-bg-offset: #ffedd5; /* Warm peach */
+  --color-text: #5a3e2b; /* Earthy brown */
+  --color-text-offset: #a3705f; /* Muted warm brown */
+  --color-border: #ffcc80; /* Golden orange */
+  --color-primary: #ff8c42; /* Vibrant sunrise orange */
+  --color-primary-offset: #ff6b35; /* Deeper fiery orange */
+  --color-secondary: #ffba08; /* Golden yellow */
 }
 
-/* Dark theme */
-.dark {
-  --color-primary: #1e293b; /* Dark Mode */
-  --color-secondary: #334155;
-  --color-accent: #64748b;
-
-  --color-background: #0f172a;
-  --color-text: #f1f5f9;
-
-  --font-sans: 'Arial', sans-serif;
-  --font-serif: 'Georgia', serif;
+.theme-matcha-zen {
+  --color-bg: #f7f7f2; /* Soft off-white */
+  --color-bg-offset: #e0e0d1; /* Muted beige */
+  --color-text: #3d3b2f; /* Deep earthy brown */
+  --color-text-offset: #70705c; /* Muted olive */
+  --color-border: #c5c5a5; /* Gentle green-gray */
+  --color-primary: #a4c639; /* Matcha green */
+  --color-primary-offset: #8daa25; /* Deeper earthy green */
+  --color-secondary: #ffd700; /* Golden yellow */
 }
 
-/* Theme Blue */
-.theme-blue {
-  --color-primary: #3b82f6;
-  --color-secondary: #1e40af;
-  --color-accent: #e0f2fe;
-
-  --color-background: #eff6ff;
-  --color-text: #1e293b;
-
+.theme-cyber-neon {
+  --color-bg: #10002b; /* Deep space violet */
+  --color-bg-offset: #240046; /* Dark neon purple */
+  --color-text: #ffcad4; /* Soft pink glow */
+  --color-text-offset: #ff90e8; /* Vibrant neon magenta */
+  --color-border: #5a189a; /* Electric violet */
+  --color-primary: #ff61a6; /* Hot pink neon */
+  --color-primary-offset: #ff006e; /* Cyberpunk red-pink */
+  --color-secondary: #00f5d4; /* Electric cyan */
 }
 
-/* Theme Green */
-.theme-green {
-  --color-primary: #22c55e;
-  --color-secondary: #166534;
-  --color-accent: #bbf7d0;
-
-  --color-background: #f0fdf4;
-  --color-text: #14532d;
+.theme-cafe-mocha {
+  --color-bg: #3e2723; /* Deep roasted coffee */
+  --color-bg-offset: #5d4037; /* Warm espresso brown */
+  --color-text: #efebe9; /* Light creamy milk */
+  --color-text-offset: #bcaaa4; /* Muted latte beige */
+  --color-border: #8d6e63; /* Soft chocolate brown */
+  --color-primary: #d7a86e; /* Sweet caramel */
+  --color-primary-offset: #a9825d; /* Rich mocha brown */
+  --color-secondary: #ffcc80; /* Buttery vanilla cream */
 }
 
-/* Theme Red */
-.theme-red {
-  --color-primary: #ef4444;
-  --color-secondary: #7f1d1d;
-  --color-accent: #fecaca;
-
-  --color-background: #fef2f2;
-  --color-text: #7f1d1d;
-
+.theme-ember-shadows {
+  --color-bg: #0b090a; /* Deep volcanic black */
+  --color-bg-offset: #161a1d; /* Smoky charcoal */
+  --color-text: #ffead3; /* Warm ember glow */
+  --color-text-offset: #e85d04; /* Fiery orange */
+  --color-border: #9d0208; /* Dark lava red */
+  --color-primary: #ff5400; /* Bright molten lava */
+  --color-primary-offset: #c1121f; /* Deep magma red */
+  --color-secondary: #ffba08; /* Flickering gold */
 }
-/* Theme Brown */
-.theme-brown {
-  --color-primary: #ef4444;
-  --color-secondary: #7f1d1d;
-  --color-accent: #A27B5C;
 
-  --color-background: #2C3639;
-  --color-text: #DCD7C9;
-
+.theme-grayscale {
+  --color-bg: #121212; /* Deep charcoal black */
+  --color-bg-offset: #1e1e1e; /* Soft dark gray */
+  --color-text: #d6d6d6; /* Light gray */
+  --color-text-offset: #a8a8a8; /* Muted gray */
+  --color-border: #6c6c6c; /* Mid-tone gray */
+  --color-primary: #888888; /* Neutral gray */
+  --color-primary-offset: #5a5a5a; /* Darker gray */
+  --color-secondary: #b0b0b0; /* Soft silver */
 }
