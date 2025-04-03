@@ -13,7 +13,7 @@ export default async function getPageSpeed(url: string) {
     const response = await fetch(
       `${PAGESPEED_URL}?url=${encodeURIComponent(url)}&key=${API_KEY}&category=performance&category=accessibility&category=best-practices&category=seo&strategy=desktop`,
       {
-        next: { revalidate: 0 },
+        next: { revalidate: 60 },
       },
     );
 
