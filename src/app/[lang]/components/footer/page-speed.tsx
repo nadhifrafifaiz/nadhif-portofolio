@@ -15,9 +15,9 @@ export default async function PageSpeedChecker() {
   }
 
   const getScoreColor = (score: number) => {
-    if (score >= 0.9) return "bg-green-500"; // Green for 90-100
-    if (score >= 0.5) return "bg-yellow-500"; // Yellow for 50-89
-    return "bg-red-500"; // Red for 0-49
+    if (score >= 0.9) return "bg-green-500";
+    if (score >= 0.5) return "bg-yellow-500";
+    return "bg-red-500";
   };
 
   return (
