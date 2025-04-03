@@ -10,6 +10,7 @@ import { getDictionary } from "@/get-dictionary";
 import DictionaryProvider from "@/dictionaries/dictionary-provider";
 import dynamic from "next/dynamic";
 import { THEMES_SELECTIONS } from "@/utils/themes";
+import Footer from "./components/footer";
 
 const ThemeOptions = dynamic(() => import("./components/theme/theme-options"), {
   ssr: false,
@@ -39,6 +40,7 @@ export default async function RootLayout({
             <ThemeOptions />
             <TopBar lang={params.lang} />
             <div className="mx-auto">{children}</div>
+            <Footer />
           </ThemeProvider>
         </DictionaryProvider>
       </body>

@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
-import HighlightText from "../../components/highlight-text";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 import { useDictionary } from "@/dictionaries/dictionary-provider";
+import HighlightText from "../../components/highlight-text";
 
 export default function HomepageHero() {
   const dictionary = useDictionary();
