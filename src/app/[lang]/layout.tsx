@@ -29,7 +29,7 @@ export default async function RootLayout({
       lang={params.lang}
       className={`${epilogue.variable} ${open_sans.variable} ${playfair_display.variable}`}
     >
-      <body className="bg-bg min-w-[400px]">
+      <body className="bg-bg h-screen min-w-[400px]">
         <DictionaryProvider dictionary={dictionary}>
           <ThemeProvider
             attribute="class"
@@ -38,9 +38,11 @@ export default async function RootLayout({
             storageKey="theme"
           >
             <ThemeOptions />
-            <TopBar lang={params.lang} />
-            <div className="mx-auto">{children}</div>
-            <Footer />
+            <div className="flex min-h-screen flex-col">
+              <TopBar lang={params.lang} />
+              <main className="mx-auto flex-grow">{children}</main>
+              <Footer />
+            </div>
           </ThemeProvider>
         </DictionaryProvider>
       </body>
