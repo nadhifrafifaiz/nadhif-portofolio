@@ -2,19 +2,22 @@ import "./globals.css";
 import { i18n, Locale } from "@/i18n-config";
 
 import { ThemeProvider } from "next-themes";
-import TopBar from "./components/top-bar";
-import LocaleSwitcher from "./components/locale-switcher";
+import TopBar from "../../components/top-bar";
+import LocaleSwitcher from "../../components/locale-switcher";
 // import ThemeOptions from "./components/theme/theme-options";
 import { epilogue, open_sans, playfair_display } from "../fonts";
 import { getDictionary } from "@/get-dictionary";
 import DictionaryProvider from "@/dictionaries/dictionary-provider";
 import dynamic from "next/dynamic";
 import { THEMES_SELECTIONS } from "@/utils/themes";
-import Footer from "./components/footer";
+import Footer from "../../components/footer";
 
-const ThemeOptions = dynamic(() => import("./components/theme/theme-options"), {
-  ssr: false,
-});
+const ThemeOptions = dynamic(
+  () => import("../../components/theme/theme-options"),
+  {
+    ssr: false,
+  },
+);
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
@@ -29,7 +32,7 @@ export default async function RootLayout({
       lang={params.lang}
       className={`${epilogue.variable} ${open_sans.variable} ${playfair_display.variable}`}
     >
-      <body className="bg-bg h-screen min-w-[400px]">
+      <body className="bg-bg-color h-screen min-w-[400px] font-epilogue">
         <DictionaryProvider dictionary={dictionary}>
           <ThemeProvider
             attribute="class"
