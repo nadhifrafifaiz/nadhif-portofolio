@@ -48,6 +48,7 @@ export default function TopBar({ lang }: { lang: string }) {
             width={48}
             height={48}
             className="rounded-full"
+            loading="lazy"
           />
           <p className="pt-[2px]">Nadhif Rafifaiz</p>
         </div>
@@ -180,19 +181,6 @@ export default function TopBar({ lang }: { lang: string }) {
                       )}
                     </motion.a>
                   ))}
-
-                  {/* <motion.button
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      setIsThemeOpen(!isThemeOpen);
-                    }}
-                    initial={{ x: -50, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
-                    className="text-start hover:text-accent"
-                  >
-                    <FaPaintBrush />
-                  </motion.button> */}
                 </nav>
               </div>
             </div>
