@@ -120,25 +120,25 @@ export default function PageSpeedChecker() {
           <>
             <div className="flex h-20 w-20 flex-col items-center">
               <div
-                className={`bg-bg-color-offset border-bg-offset flex h-10 w-10 items-center justify-center rounded-full border-2 pt-1 text-sm font-semibold`}
+                className={`bg-bg-color-offset border-bg-color-offset flex h-10 w-10 items-center justify-center rounded-full border-2 pt-1 text-sm font-semibold`}
               ></div>
               <p className="mt-2 w-20 text-center text-xs font-medium"></p>
             </div>
             <div className="flex h-20 w-20 flex-col items-center">
               <div
-                className={`bg-bg-color-offset border-bg-offset flex h-10 w-10 items-center justify-center rounded-full border-2 pt-1 text-sm font-semibold`}
+                className={`bg-bg-color-offset border-bg-color-offset flex h-10 w-10 items-center justify-center rounded-full border-2 pt-1 text-sm font-semibold`}
               ></div>
               <p className="mt-2 w-20 text-center text-xs font-medium"></p>
             </div>
             <div className="flex h-20 w-20 flex-col items-center">
               <div
-                className={`bg-bg-color-offset border-bg-offset flex h-10 w-10 items-center justify-center rounded-full border-2 pt-1 text-sm font-semibold`}
+                className={`bg-bg-color-offset border-bg-color-offset flex h-10 w-10 items-center justify-center rounded-full border-2 pt-1 text-sm font-semibold`}
               ></div>
               <p className="mt-2 w-20 text-center text-xs font-medium"></p>
             </div>
             <div className="flex h-20 w-20 flex-col items-center">
               <div
-                className={`bg-bg-color-offset border-bg-offset flex h-10 w-10 items-center justify-center rounded-full border-2 pt-1 text-sm font-semibold`}
+                className={`bg-bg-color-offset border-bg-color-offset flex h-10 w-10 items-center justify-center rounded-full border-2 pt-1 text-sm font-semibold`}
               ></div>
               <p className="mt-2 w-20 text-center text-xs font-medium"></p>
             </div>
