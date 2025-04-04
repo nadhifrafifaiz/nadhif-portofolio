@@ -44,7 +44,7 @@ export default function LocaleSwitcher() {
         href={redirectedPathName(
           i18n.locales.filter((l) => l !== activeLang)[0],
         )}
-        className="bg-bg-offset flex h-10 w-10 items-center justify-center rounded-full hover:bg-primary"
+        className="bg-bg-color-offset hover:bg-primary-color flex h-10 w-10 items-center justify-center rounded-full"
       >
         {activeLang === "id" ? (
           <EnglishFlag className="h-5 w-5" />

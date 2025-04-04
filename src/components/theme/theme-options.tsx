@@ -153,17 +153,17 @@ export default function ThemeOptions() {
       }
       transition={{ type: "spring", stiffness: 120, damping: 14 }}
     >
-      <div className="bg-bg-offset h-full overflow-hidden pl-4">
+      <div className="bg-bg-color-offset h-full overflow-hidden pl-4">
         <div className="flex h-8 items-center justify-between pt-4">
           <div className="w-full">
-            <p className="bg-bg-offset text-center font-bold uppercase tracking-wider text-text">
+            <p className="bg-bg-color-offset text-text-color text-center font-bold uppercase tracking-wider">
               {dictionary.theme.select}
             </p>
           </div>
           <div className="mr-4">
             <IoMdClose
               onClick={() => setIsThemeOpen(false)}
-              className="hover:text-text-offset h-6 w-6 text-text hover:cursor-pointer"
+              className="hover:text-text-color-offset text-text-color h-6 w-6 hover:cursor-pointer"
             />
           </div>
         </div>

@@ -30,6 +30,7 @@
   },
   "footer":{
       "social":"Media Sosial",
-      "work":"Kantor"
+      "work":"Kantor",
+      "score":"Skor SEO dari Google PageSpeed API bisa kurang akurat karena faktor seperti Core Web Vitals tidak dinilai. Jalankan Lighthouse manual untuk hasil lebih akurat."
   }
 }

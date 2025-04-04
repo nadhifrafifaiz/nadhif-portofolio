@@ -30,7 +30,8 @@
     },
     "footer":{
     "social":"Social",
-    "work":"Work"
+    "work":"Work",
+    "score":"SEO score by Google PageSpeed API may miss key factors like Core Web Vitals. Run Lighthouse manually for more accuracy."
     }
   }
   
