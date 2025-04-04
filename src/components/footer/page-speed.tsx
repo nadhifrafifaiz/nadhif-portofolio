@@ -69,12 +69,11 @@ export default function PageSpeedChecker() {
             ([key, { title, score }]) => {
               if (title === "SEO") {
                 return (
-                  <TooltipProvider>
+                  <TooltipProvider key={key}>
                     <Tooltip>
                       <TooltipTrigger>
                         <div
                           onClick={() => setShowSeo(true)}
-                          key={key}
                           className={`flex h-20 w-20 flex-col items-center hover:cursor-pointer`}
                         >
                           <div
