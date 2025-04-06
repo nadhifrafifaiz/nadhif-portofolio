@@ -8,7 +8,7 @@ export default function Footer() {
   const dictionary = useDictionary();
   return (
     <div className="bg-bg-color-offset py-8 font-epilogue">
-      <div className="text-text-color mx-auto flex w-[90%] max-w-[1200px] items-start justify-between">
+      <div className="mx-auto flex w-[90%] max-w-[1200px] items-start justify-between text-text-color">
         <div className="flex w-full flex-col gap-y-6 md:flex-row md:gap-x-8 lg:gap-y-8">
           {/* Section 1 */}
           <div className="flex flex-1 flex-col">
@@ -20,14 +20,14 @@ export default function Footer() {
               <Link
                 target="_blank"
                 href={"mailto:nadhifrafifaiz@gmail.com"}
-                className="hover:text-text-color-offset underline"
+                className="underline hover:text-text-color-offset"
               >
                 nadhifrafifaiz@gmail.com
               </Link>
               <Link
                 href={"https://wa.me/6281212436604"}
                 target="_blank"
-                className="hover:text-text-color-offset font-open-sans underline"
+                className="font-open-sans underline hover:text-text-color-offset"
               >
                 +62 81212436604
               </Link>
@@ -40,21 +40,21 @@ export default function Footer() {
             <div className="flex gap-2">
               <Link
                 href={LINKS.linkedin}
-                className="hover:text-text-color-offset underline"
+                className="underline hover:text-text-color-offset"
                 target="_blank"
               >
                 LinkedIn
               </Link>
               <Link
                 href={LINKS.medium}
-                className="hover:text-text-color-offset underline"
+                className="underline hover:text-text-color-offset"
                 target="_blank"
               >
                 Medium
               </Link>
               <Link
                 href={LINKS.github}
-                className="hover:text-text-color-offset underline"
+                className="underline hover:text-text-color-offset"
                 target="_blank"
               >
                 Github
@@ -68,7 +68,7 @@ export default function Footer() {
             <div className="flex gap-2">
               <Link
                 href={LINKS.work}
-                className="hover:text-text-color-offset underline"
+                className="underline hover:text-text-color-offset"
                 target="_blank"
               >
                 Sprout
@@ -78,9 +78,9 @@ export default function Footer() {
         </div>
 
         {/* Right Side - PageSpeedChecker */}
-        <div className="ml-8 hidden flex-shrink-0 lg:block">
+        {/* <div className="ml-8 hidden flex-shrink-0 lg:block">
           <PageSpeedChecker />
-        </div>
+        </div> */}
       </div>
     </div>
   );
