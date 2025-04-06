@@ -69,7 +69,7 @@ export default function PageSpeedChecker() {
             ([key, { title, score }]) => {
               if (title === "SEO") {
                 return (
-                  <TooltipProvider key={key}>
+                  <TooltipProvider key={key} delayDuration={1}>
                     <Tooltip>
                       <TooltipTrigger>
                         <div
@@ -144,13 +144,6 @@ export default function PageSpeedChecker() {
           </>
         )}
       </div>
-      {/* {pageData && (
-        <p className="text-xs">
-          * Why SEO Score Low? There are many additional factors Lighthouse does
-          not score here that may affect your search ranking, including
-          performance on [Core Web Vitals]
-        </p>
-      )} */}
     </div>
   );
 }
