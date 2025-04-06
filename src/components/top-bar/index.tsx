@@ -9,6 +9,7 @@ import { FaPaintBrush } from "react-icons/fa";
 import { useDictionary } from "@/dictionaries/dictionary-provider";
 import LocaleSwitcher from "../locale-switcher";
 import { i18n, Locale } from "@/i18n-config";
+import Link from "next/link";
 
 export default function TopBar({ lang }: { lang: string }) {
   const pathName = usePathname();
@@ -40,8 +41,12 @@ export default function TopBar({ lang }: { lang: string }) {
 
   return (
     <header className="relative z-50 font-epilogue">
-      <div className="text-text-color mx-auto flex w-[90%] max-w-[1200px] items-center justify-between py-8 sm:py-[50px]">
-        <div className="tracking flex items-center gap-3 text-lg font-bold">
+      <div className="mx-auto flex w-[90%] max-w-[1200px] items-center justify-between py-8 text-text-color sm:py-[50px]">
+        <CustomLink
+          lang={lang}
+          href={"/"}
+          className="tracking flex items-center gap-3 text-lg font-bold"
+        >
           <Image
             src="/images/nadhif-logo.webp"
             alt="logo"
@@ -51,7 +56,7 @@ export default function TopBar({ lang }: { lang: string }) {
             loading="lazy"
           />
           <p className="pt-[2px]">Nadhif Rafifaiz</p>
-        </div>
+        </CustomLink>
 
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-4 sm:hidden">
@@ -60,9 +65,9 @@ export default function TopBar({ lang }: { lang: string }) {
             <button
               aria-label="Theme"
               onClick={() => setIsThemeOpen(!isThemeOpen)}
-              className="bg-bg-color-offset hover:bg-primary-color flex h-10 w-10 items-center justify-center rounded-full"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-bg-color-offset hover:bg-primary-color"
             >
-              <FaPaintBrush className="text-text-color h-4 w-4" />
+              <FaPaintBrush className="h-4 w-4 text-text-color" />
             </button>
           </div>
           <button
@@ -106,7 +111,7 @@ export default function TopBar({ lang }: { lang: string }) {
                 {item.label}
               </CustomLink>
               {checkPathname(item.href) && (
-                <div className="bg-primary-color h-1 w-full" />
+                <div className="h-1 w-full bg-primary-color" />
               )}
             </div>
           ))}
@@ -115,9 +120,9 @@ export default function TopBar({ lang }: { lang: string }) {
             <button
               aria-label="Theme"
               onClick={() => setIsThemeOpen(!isThemeOpen)}
-              className="bg-bg-color-offset hover:bg-primary-color flex h-10 w-10 items-center justify-center rounded-full"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-bg-color-offset hover:bg-primary-color"
             >
-              <FaPaintBrush className="text-text-color h-4 w-4" />
+              <FaPaintBrush className="h-4 w-4 text-text-color" />
             </button>
           </div>
         </nav>
@@ -133,9 +138,9 @@ export default function TopBar({ lang }: { lang: string }) {
               transition: { type: "spring", stiffness: 100, damping: 20 },
             }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="bg-bg-color fixed inset-0 flex"
+            className="fixed inset-0 flex bg-bg-color"
           >
-            <div className="bg-bg-color fixed inset-0 flex items-center justify-center sm:hidden">
+            <div className="fixed inset-0 flex items-center justify-center bg-bg-color sm:hidden">
               <div className="flex h-full w-full flex-col space-y-12 p-6">
                 <button
                   onClick={toggleMenu}
@@ -157,7 +162,7 @@ export default function TopBar({ lang }: { lang: string }) {
                     />
                   </svg>
                 </button>
-                <nav className="text-text-color flex flex-col space-y-8 font-epilogue text-4xl font-semibold">
+                <nav className="flex flex-col space-y-8 font-epilogue text-4xl font-semibold text-text-color">
                   {navItems.map((item, index) => (
                     <motion.a
                       key={item.href}
@@ -165,7 +170,7 @@ export default function TopBar({ lang }: { lang: string }) {
                       initial={{ x: -50, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
-                      className="hover:text-text-color-offset w-fit"
+                      className="w-fit hover:text-text-color-offset"
                     >
                       <CustomLink
                         lang={lang}
@@ -175,7 +180,7 @@ export default function TopBar({ lang }: { lang: string }) {
                         {item.label}
                       </CustomLink>
                       {checkPathname(item.href) ? (
-                        <div className="bg-primary-color h-1 w-full" />
+                        <div className="h-1 w-full bg-primary-color" />
                       ) : (
                         <div className="h-1 w-full" />
                       )}

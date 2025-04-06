@@ -1,9 +1,8 @@
-import { createClient } from "@/utils/supabase/server";
 import { Metadata } from "next";
-
 import { Locale } from "@/i18n-config";
-import { getDictionary } from "@/get-dictionary";
 import HomepageHero from "./homepage/components/homepage-hero";
+import HomepagePosts from "./homepage/components/homepage-posts";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Nadhif Rafifaiz K",
@@ -15,12 +14,17 @@ export default async function Home(props: {
 }) {
   const { lang } = await props.params;
 
-  const dictionary = await getDictionary(lang);
   return (
-    <>
-      {/* {dictionary["server-component"].welcome}
-      IM HOOME */}
+    <div className="pb-8 lg:pb-20">
       <HomepageHero />
-    </>
+
+      <Suspense
+        fallback={
+          <div className="mx-auto flex h-fit w-[90%] max-w-[1200px] flex-col justify-center py-[2rem] lg:min-h-[500px] xl:w-[100%]"></div>
+        }
+      >
+        <HomepagePosts lang={lang} />
+      </Suspense>
+    </div>
   );
 }

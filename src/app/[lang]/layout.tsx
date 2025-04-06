@@ -43,7 +43,7 @@ export default async function RootLayout({
             <ThemeOptions />
             <div className="flex min-h-screen flex-col">
               <TopBar lang={params.lang} />
-              <main className="mx-auto flex-grow">{children}</main>
+              <main className="flex-grow">{children}</main>
               <Footer />
             </div>
           </ThemeProvider>

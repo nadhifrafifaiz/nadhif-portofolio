@@ -32,6 +32,63 @@
     "social":"Social",
     "work":"Work",
     "score":"SEO score by Google PageSpeed API may miss key factors like Core Web Vitals. Run Lighthouse manually for more accuracy."
-    }
+    },
+    "about":{
+      "greeting":"Heya, People",
+      "intro":{
+        "1":" I’m ",
+        "2":"Nadhif Rafifaiz",
+        "3": "— a frontend engineer passionate about crafting beautiful and accessible web experiences. I love turning ideas into clean, performant UIs using modern tools like React, Next.js, and Tailwind CSS.",
+        "sub-1":"I thrive on solving UI/UX challenges and making the web feel intuitive. Whether it’s building a themeable design system, fine-tuning performance, or crafting playful micro-interactions — I’m all in.",
+        "sub-2":{
+          "1":"I enjoy writing tech tips and tutorials on ",
+          "2":"Medium",
+          "3":" and sharing my journey on ",
+          "4":"LinkedIn",
+          "5":"Currently, I’m focused on growing into a senior frontend role while building thoughtful side projects that reflect my style and skills."
+        }
+      },
+      "favorite":{
+        "title":"🛠 Favorite Tools & Tech",
+        "content":{
+          "1":"React, Next.js, Vue, Nuxt.js, TypeScript, Tailwind CSS, Node.js, Express and PostgreSQL",
+          "2":"Always curious about: Web performance, micro frontends, and playful UI"
+        }
+      },
+      "up-to":{
+        "title":"🎯 What I’m Up To",
+        "content":{
+          "1":"I’m currently focused on growing not just as a developer, but as a leader. I'm learning how to guide projects, mentor junior devs, and communicate better across teams. I believe great frontend isn’t just about pixels — it’s also about people, process, and impact.",
+          "2":" Alongside that, I’m exploring ways to bring storytelling into my portfolio, writing dev blogs, and building personal projects that reflect my skills and design sensibilities."
+        }
+      },
+      "outside-code":{
+        "title":"✨ Outside of Code",
+        "content":{
+          "1":" When I’m not coding, you’ll probably find me with riding my bike touring accross state, coffee hunting, or exploring hidden gem spots"
+        }
+      },
+      "lets-connect":{  
+        "title":"Let’s connect! Feel free to reach out if you want to chat about frontend, collaborate on a project, or just say hi.",
+        "content":{"1":"LinkedIn","2":"Medium"}
+      }
+      
+    },
+"projects":{
+  "category":{
+    "landing-page":"Landing Page",
+    "commerce":"E-commerce",
+    "hms":"Health Management System"
+  },
+  "description":{
+    "landing-seller": "A promotional one-pager for a Toco Ecommerce. Clean layout with list of benefits to join as seller at Toco and contact me for more information form",
+    "landing-community":  "Introducing the Toco Community feature with a vibrant one-pager that breaks down how users can connect, engage, and grow within the platform. Includes a CTA button to join the community, all wrapped in a visually appealing interface.",
+    "landing-premium":   "Showcases the exclusive features of Toco Premium for sellers—boosted visibility, better tools, and more perks. Designed to convey value at a glance and convert curious users into premium members.",
+    "landing-tocoffee":  "Featuring a digital menu, cozy vibes through visuals, and a built-in reservation form, it’s a perfect mix of functionality and brand storytelling for a local gem in BSD, Indonesia.",
+    "toco":   "Toco.id is E-commerce that base on community, Toco Marketplace to sell and buy products and connected directly to consumer, Toco Classified for advertising your secondhand or unique products",
+    "seller":   "Manage your products and orders on Toco Seller Dashboard, beyond that manage your profile setting, payment method, and logistic options. Become premium seller unlocking customize page for your store",
+    "myhc":   "Built a comprehensive clinic management platform to streamline patient registration, billing, and medical records. Integrated a real-time queue management system with automated alerts for both in-patient and out-patient appointments. Also implemented appointment reminders via email and SMS, significantly reducing no-shows and improving clinic efficiency.",
+    "dontia":  "A full-featured telemedicine web app built with Vue.js, Nuxt, and Pinia. Patients can schedule appointments, consult with doctors via Twilio-powered video calls, and access a personalized health dashboard to view medical history, upcoming visits, and track prescriptions — all in one seamless experience."}
+}
   }
   
