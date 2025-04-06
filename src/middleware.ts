@@ -37,7 +37,7 @@ export function middleware(request: NextRequest) {
     const locale = getLocale(request);
 
     // Safeguard against undefined or empty locale
-    if (!locale || locale === i18n.defaultLocale) {
+    if (!locale) {
       return NextResponse.next();
     }
 
@@ -46,7 +46,7 @@ export function middleware(request: NextRequest) {
       request.url,
     );
 
-    if (locale === i18n.defaultLocale) {
+    if (locale) {
       return NextResponse.rewrite(url);
     }
 
