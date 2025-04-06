@@ -18,6 +18,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col">
               <Link
+                target="_blank"
                 href={"mailto:nadhifrafifaiz@gmail.com"}
                 className="hover:text-text-color-offset underline"
               >
@@ -40,18 +41,21 @@ export default function Footer() {
               <Link
                 href={LINKS.linkedin}
                 className="hover:text-text-color-offset underline"
+                target="_blank"
               >
                 LinkedIn
               </Link>
               <Link
                 href={LINKS.medium}
                 className="hover:text-text-color-offset underline"
+                target="_blank"
               >
                 Medium
               </Link>
               <Link
                 href={LINKS.github}
                 className="hover:text-text-color-offset underline"
+                target="_blank"
               >
                 Github
               </Link>
@@ -65,6 +69,7 @@ export default function Footer() {
               <Link
                 href={LINKS.work}
                 className="hover:text-text-color-offset underline"
+                target="_blank"
               >
                 Sprout
               </Link>

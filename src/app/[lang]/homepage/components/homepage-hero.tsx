@@ -9,7 +9,7 @@ import { LINKS } from "@/constant/linkts";
 export default function HomepageHero() {
   const dictionary = useDictionary();
   return (
-    <div className="mx-auto flex h-fit max-w-[1200px] flex-col justify-center py-[2rem] lg:min-h-[500px]">
+    <div className="mx-auto flex h-fit w-[90%] max-w-[1200px] flex-col justify-center py-[2rem] lg:min-h-[500px] xl:w-[100%]">
       <p className="text-primary-color mb-4 font-epilogue text-xl font-bold uppercase tracking-widest md:text-xl">
         {dictionary.home.greeting}
       </p>
