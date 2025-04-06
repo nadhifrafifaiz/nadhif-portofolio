@@ -3,9 +3,9 @@ import { Locale } from "@/i18n-config";
 import HomepageHero from "./homepage/components/homepage-hero";
 import HomepagePosts from "./homepage/components/homepage-posts";
 import { Suspense } from "react";
-import { METADATA } from "@/constant/metadata";
+import { getMetadata } from "@/constant/metadata";
 
-export const metadata: Metadata = METADATA;
+export const metadata: Metadata = getMetadata({ type: "home", path: "/" });
 
 export default async function Home(props: {
   params: Promise<{ lang: Locale }>;

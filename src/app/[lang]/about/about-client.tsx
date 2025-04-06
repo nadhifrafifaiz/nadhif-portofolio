@@ -8,18 +8,9 @@ export default function AboutClient() {
   const dictionary = useDictionary();
   return (
     <main className="mx-auto max-w-3xl pb-8 text-text-color lg:pb-20">
-      <p className="pb-8 font-playfair text-4xl font-semibold text-text-color lg:pb-20 lg:text-center lg:text-title">
+      <h1 className="pb-8 font-playfair text-4xl font-semibold text-text-color lg:pb-20 lg:text-center lg:text-title">
         {dictionary.about.greeting}
-      </p>
-      {/* <div className="m-auto my-12 h-52 w-52 overflow-hidden rounded-full shadow-md">
-        <Image
-          src="/images/nadhif-logo.webp"
-          alt="Photo of Nadhif Rafifaiz"
-          width={160}
-          height={160}
-          className="h-full w-full object-cover"
-        />
-      </div> */}
+      </h1>
 
       <p className="mb-4 text-lg leading-relaxed">
         {dictionary.about.intro[1]}{" "}

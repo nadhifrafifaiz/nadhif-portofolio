@@ -1,8 +1,11 @@
 import { Metadata } from "next";
 import AboutClient from "./about-client";
-import { METADATA_ABOUT } from "@/constant/metadata";
+import { getMetadata } from "@/constant/metadata";
 
-export const metadata: Metadata = METADATA_ABOUT;
+export const metadata: Metadata = getMetadata({
+  type: "about",
+  path: "/about",
+});
 
 export default async function About() {
   return (

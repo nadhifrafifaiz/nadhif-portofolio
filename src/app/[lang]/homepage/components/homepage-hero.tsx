@@ -9,9 +9,9 @@ export default function HomepageHero() {
 
   return (
     <div className="mx-auto flex h-fit min-h-[350px] w-[90%] max-w-[1200px] flex-col justify-center py-[2rem] lg:min-h-[500px] xl:w-[100%]">
-      <p className="mb-4 font-epilogue text-xl font-bold uppercase tracking-wider text-primary-color md:text-xl">
+      <h1 className="mb-4 font-epilogue text-xl font-bold uppercase tracking-wider text-primary-color md:text-xl">
         {dictionary.home.greeting}
-      </p>
+      </h1>
       <p className="mb-2 font-playfair text-4xl font-bold leading-tight text-text-color sm:text-5xl md:text-6xl lg:text-7xl">
         {dictionary.home.title}
       </p>

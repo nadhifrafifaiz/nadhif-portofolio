@@ -10,9 +10,9 @@ export default function ProjectClient() {
   const dictionary = useDictionary();
   return (
     <div className="pb-8 lg:pb-20">
-      <p className="pb-8 font-playfair text-4xl font-semibold text-text-color lg:pb-20 lg:text-center lg:text-title">
+      <h1 className="pb-8 font-playfair text-4xl font-semibold text-text-color lg:pb-20 lg:text-center lg:text-title">
         {dictionary.navbar.projects}
-      </p>
+      </h1>
       <div className="flex flex-col gap-16">
         {PROJECTS.map((project, index) => {
           return (
