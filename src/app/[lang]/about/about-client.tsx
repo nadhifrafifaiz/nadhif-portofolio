@@ -7,8 +7,8 @@ import Link from "next/link";
 export default function AboutClient() {
   const dictionary = useDictionary();
   return (
-    <main className="mx-auto max-w-3xl text-text-color">
-      <p className="font-playfair text-4xl font-semibold text-text-color lg:pb-20 lg:text-center lg:text-title">
+    <main className="mx-auto max-w-3xl pb-8 text-text-color lg:pb-20">
+      <p className="pb-8 font-playfair text-4xl font-semibold text-text-color lg:pb-20 lg:text-center lg:text-title">
         {dictionary.about.greeting}
       </p>
       {/* <div className="m-auto my-12 h-52 w-52 overflow-hidden rounded-full shadow-md">

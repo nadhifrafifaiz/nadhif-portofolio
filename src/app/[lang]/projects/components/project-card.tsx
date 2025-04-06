@@ -8,7 +8,7 @@ import { useDictionary } from "@/dictionaries/dictionary-provider";
 export default function Projects({ project }: { project: ProjectCategory }) {
   const dictionary = useDictionary();
   return (
-    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4">
       {project.projects.map((p, index) => {
         return (
           <motion.div
