@@ -9,6 +9,7 @@ import DictionaryProvider from "@/dictionaries/dictionary-provider";
 import dynamic from "next/dynamic";
 import { THEMES_SELECTIONS } from "@/utils/themes";
 import Footer from "../../components/footer";
+import { jsonLdPerson } from "@/constant/metadata";
 
 const ThemeOptions = dynamic(
   () => import("../../components/theme/theme-options"),
@@ -30,6 +31,14 @@ export default async function RootLayout({
       lang={params.lang}
       className={`${epilogue.variable} ${open_sans.variable} ${playfair_display.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdPerson),
+          }}
+        />
+      </head>
       <body className="h-screen min-w-[400px] bg-bg-color font-epilogue">
         <DictionaryProvider dictionary={dictionary}>
           <ThemeProvider
