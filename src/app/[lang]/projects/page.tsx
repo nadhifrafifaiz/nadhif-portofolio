@@ -1,13 +1,10 @@
-import { createClient } from "@/utils/supabase/server";
 import { Metadata } from "next";
 import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
 import ProjectClient from "./project-client";
+import { METADATA_PROJECTS } from "@/constant/metadata";
 
-export const metadata: Metadata = {
-  title: "Nadhif Rafifaiz K",
-  description: "My Portfolios",
-};
+export const metadata: Metadata = METADATA_PROJECTS;
 
 export default async function About(props: {
   params: Promise<{ lang: Locale }>;
