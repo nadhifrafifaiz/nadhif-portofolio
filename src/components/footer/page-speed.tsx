@@ -10,6 +10,7 @@ import {
 } from "../ui/tooltip";
 import { useDictionary } from "@/dictionaries/dictionary-provider";
 import { usePathname } from "next/navigation";
+import { defaultPageSpeed } from "@/constant/page-speed";
 
 export default function PageSpeedChecker() {
   const pathname = usePathname();
@@ -17,43 +18,50 @@ export default function PageSpeedChecker() {
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL!;
 
   const [pageData, setPageData] = useState<PageSpeedResponse | null>(null);
-  const [retryCount, setRetryCount] = useState(0);
 
   const dictionary = useDictionary();
 
-  const MAX_RETRIES = 3;
-  const RETRY_DELAY = 2000;
-
-  const fetchPageSpeedData = async () => {
+  const fetchPageSpeedData = async (attempt = 0): Promise<void> => {
+    const localPageSpeedData = localStorage.getItem("pageSpeedData");
     try {
-      const response = await getPageSpeed(`${BASE_URL}${pathname}`);
-
+      if (localPageSpeedData) {
+        try {
+          setPageData(JSON.parse(localPageSpeedData));
+        } catch {
+          setPageData(defaultPageSpeed);
+          localStorage.setItem(
+            "pageSpeedData",
+            JSON.stringify(defaultPageSpeed),
+          );
+        }
+      } else {
+        setPageData(defaultPageSpeed);
+        localStorage.setItem("pageSpeedData", JSON.stringify(defaultPageSpeed));
+      }
+      const response = await getPageSpeed(`${BASE_URL}`);
       setPageData(response);
       localStorage.setItem("pageSpeedData", JSON.stringify(response));
     } catch (error) {
-      if (retryCount < MAX_RETRIES) {
-        setRetryCount((prev) => prev + 1);
-        setTimeout(fetchPageSpeedData, RETRY_DELAY);
-      } else {
-        const localPageSpeedData = localStorage.getItem("pageSpeedData");
-        if (localPageSpeedData) {
+      if (localPageSpeedData) {
+        try {
           setPageData(JSON.parse(localPageSpeedData));
-        } else {
-          setPageData(null);
+        } catch {
+          setPageData(defaultPageSpeed);
+          localStorage.setItem(
+            "pageSpeedData",
+            JSON.stringify(defaultPageSpeed),
+          );
         }
+      } else {
+        setPageData(defaultPageSpeed);
+        localStorage.setItem("pageSpeedData", JSON.stringify(defaultPageSpeed));
       }
     }
   };
 
   useEffect(() => {
-    const localPageSpeedData = localStorage.getItem("pageSpeedData");
-    if (localPageSpeedData) {
-      setPageData(JSON.parse(localPageSpeedData));
-    } else {
-      setPageData(null);
-    }
     fetchPageSpeedData();
-  }, [retryCount]);
+  }, []);
 
   const getScoreColorBorder = (score: number) => {
     if (score >= 0.9) return "border-green-500 text-green-500";

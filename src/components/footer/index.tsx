@@ -78,9 +78,9 @@ export default function Footer() {
         </div>
 
         {/* Right Side - PageSpeedChecker */}
-        {/* <div className="ml-8 hidden flex-shrink-0 lg:block">
+        <div className="ml-8 hidden flex-shrink-0 lg:block">
           <PageSpeedChecker />
-        </div> */}
+        </div>
       </div>
     </div>
   );
