@@ -4,16 +4,16 @@ import { getDictionary } from "@/get-dictionary";
 import { getMediumPosts } from "@/api/medium";
 import { MediumPost } from "@/api/medium/medium.interface";
 import PostClient from "./post-client";
-import { METADATA_ABOUT } from "@/constant/metadata";
+import { getMetadata } from "@/constant/metadata";
 
-export const metadata: Metadata = METADATA_ABOUT;
+export const metadata: Metadata = getMetadata({
+  type: "posts",
+  path: "/posts",
+});
 
-export default async function About(props: {
+export default async function Posts(props: {
   params: Promise<{ lang: Locale }>;
 }) {
-  const { lang } = await props.params;
-
-  const dictionary = await getDictionary(lang);
   const posts = (await getMediumPosts()) as MediumPost[];
   return (
     <>
