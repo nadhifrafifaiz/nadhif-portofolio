@@ -75,6 +75,10 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontSize: {
+        title: "80px",
+        subtitle: "40px",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

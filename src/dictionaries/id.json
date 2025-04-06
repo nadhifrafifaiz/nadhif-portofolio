@@ -32,5 +32,66 @@
       "social":"Media Sosial",
       "work":"Kantor",
       "score":"Skor SEO dari Google PageSpeed API bisa kurang akurat karena faktor seperti Core Web Vitals tidak dinilai. Jalankan Lighthouse manual untuk hasil lebih akurat."
+  },
+  "about": {
+  "greeting": "Halo, Teman-teman",
+  "intro": {
+    "1": "Saya ",
+    "2": "Nadhif Rafifaiz",
+    "3": "— seorang frontend engineer yang antusias menciptakan pengalaman web yang indah dan mudah diakses. Saya senang mengubah ide menjadi antarmuka yang bersih dan performa tinggi dengan tools modern seperti React, Next.js, dan Tailwind CSS.",
+    "sub-1": "Saya suka tantangan dalam UI/UX dan membuat web terasa intuitif. Mulai dari membangun sistem desain yang bisa diganti tema, mengoptimalkan performa, hingga membuat micro-interaction yang menyenangkan — saya selalu all-in.",
+    "sub-2": {
+      "1": "Saya suka menulis tips dan tutorial seputar teknologi di ",
+      "2": "Medium",
+      "3": " serta membagikan perjalanan saya di ",
+      "4": "LinkedIn",
+      "5": "Saat ini, saya sedang fokus untuk berkembang menjadi frontend engineer tingkat senior sambil membangun side project yang merefleksikan gaya dan kemampuan saya."
+    }
+  },
+  "favorite": {
+    "title": "🛠 Tools & Teknologi Favorit",
+    "content": {
+      "1": "React, Next.js, Vue, Nuxt.js, TypeScript, Tailwind CSS, Node.js, Express, dan PostgreSQL",
+      "2": "Hal yang selalu bikin penasaran: Performa web, micro frontend, dan UI yang playful"
+    }
+  },
+  "up-to": {
+    "title": "🎯 Saat Ini Saya Sedang...",
+    "content": {
+      "1": "Saat ini saya tidak hanya fokus menjadi developer yang lebih baik, tapi juga berkembang sebagai seorang pemimpin. Saya sedang belajar memimpin proyek, membimbing developer junior, dan meningkatkan komunikasi lintas tim. Menurut saya, menjadi frontend engineer bukan hanya soal piksel — tapi juga soal manusia, proses, dan dampaknya.",
+      "2": "Di samping itu, saya sedang mengeksplorasi bagaimana cara menghadirkan storytelling ke dalam portfolio saya, menulis blog tentang dunia dev, dan membangun proyek-proyek pribadi yang mencerminkan gaya serta kemampuan saya."
+    }
+  },
+  "outside-code": {
+    "title": "✨ Di Luar Dunia Koding",
+    "content": {
+      "1": "Di luar coding, kamu bisa menemukan saya sedang motoran lintas kota, berburu kopi enak, atau menjelajahi tempat-tempat tersembunyi yang menarik."
+    }
+  },
+  "lets-connect": {
+    "title": "Yuk ngobrol! Jangan ragu untuk menghubungi saya kalau kamu ingin diskusi soal frontend, kolaborasi proyek, atau sekadar menyapa.",
+    "content": {
+      "1": "LinkedIn",
+      "2": "Medium"
+    }
   }
+},
+"projects": {
+"category": {
+  "landing-page": "Landing Page",
+  "commerce": "E-commerce & Marketplace",
+  "hms": "Sistem Manajemen Klinik"
+},
+  "description": {
+    "landing-seller": "Landing page promosi untuk Toco Ecommerce. Desain clean dengan daftar keuntungan menjadi seller di Toco, serta form kontak untuk informasi lebih lanjut.",
+    "landing-community": "Memperkenalkan fitur Toco Community lewat halaman informatif yang menjelaskan bagaimana pengguna bisa connect, engage, dan grow bareng komunitas. Ada tombol CTA untuk langsung bergabung, dibungkus dalam UI yang menarik.",
+    "landing-premium": "Menampilkan fitur-fitur eksklusif Toco Premium untuk seller — mulai dari boosted visibility, akses ke tools yang lebih powerful, sampai berbagai benefit tambahan. Dibuat untuk langsung menunjukkan value dan mengajak user jadi member premium.",
+    "landing-tocoffee": "Landing page untuk kedai kopi 'Tocoffee' di BSD, Indonesia. Menampilkan digital menu, visual yang cozy, dan form reservasi yang built-in — kombinasi branding dan fungsi yang pas untuk lokal bisnis.",
+    "toco": "Toco.id adalah platform e-commerce berbasis komunitas. Di Toco Marketplace, pengguna bisa jual beli produk langsung ke konsumen. Ada juga Toco Classified untuk pasang iklan barang second atau produk unik.",
+    "seller": "Kelola produk dan pesanan kamu lewat Toco Seller Dashboard. Di sana juga bisa atur profil, metode pembayaran, dan opsi logistik. Jadi Premium Seller buat dapetin halaman toko yang bisa di-custom.",
+    "myhc": "Membangun platform manajemen klinik end-to-end untuk mempermudah proses registrasi pasien, billing, dan rekam medis. Termasuk sistem antrean real-time dengan alert otomatis untuk pasien rawat jalan maupun inap, plus fitur pengingat appointment via email dan SMS untuk mengurangi no-show.",
+    "dontia": "Aplikasi web telemedicine lengkap yang dibuat dengan Vue.js, Nuxt, dan Pinia. Pasien bisa booking janji temu, video call dengan dokter lewat Twilio, dan akses health dashboard pribadi untuk riwayat medis, jadwal kunjungan, dan monitoring resep — semua dalam satu seamless experience."
+  }
+}
+
 }

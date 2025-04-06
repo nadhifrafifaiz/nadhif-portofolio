@@ -1,15 +1,14 @@
 "use client";
 import Link from "next/link";
-import { getDictionary } from "@/get-dictionary";
-import { Locale } from "@/i18n-config";
 import { useDictionary } from "@/dictionaries/dictionary-provider";
 import HighlightText from "../../../../components/highlight-text";
 import { LINKS } from "@/constant/linkts";
 
 export default function HomepageHero() {
   const dictionary = useDictionary();
+
   return (
-    <div className="mx-auto flex h-fit w-[90%] max-w-[1200px] flex-col justify-center py-[2rem] lg:min-h-[500px] xl:w-[100%]">
+    <div className="mx-auto flex h-fit min-h-[350px] w-[90%] max-w-[1200px] flex-col justify-center py-[2rem] lg:min-h-[500px] xl:w-[100%]">
       <p className="text-primary-color mb-4 font-epilogue text-xl font-bold uppercase tracking-widest md:text-xl">
         {dictionary.home.greeting}
       </p>
