@@ -3,8 +3,6 @@ import { i18n, Locale } from "@/i18n-config";
 
 import { ThemeProvider } from "next-themes";
 import TopBar from "../../components/top-bar";
-import LocaleSwitcher from "../../components/locale-switcher";
-// import ThemeOptions from "./components/theme/theme-options";
 import { epilogue, open_sans, playfair_display } from "../fonts";
 import { getDictionary } from "@/get-dictionary";
 import DictionaryProvider from "@/dictionaries/dictionary-provider";
@@ -32,7 +30,7 @@ export default async function RootLayout({
       lang={params.lang}
       className={`${epilogue.variable} ${open_sans.variable} ${playfair_display.variable}`}
     >
-      <body className="bg-bg-color h-screen min-w-[400px] font-epilogue">
+      <body className="h-screen min-w-[400px] bg-bg-color font-epilogue">
         <DictionaryProvider dictionary={dictionary}>
           <ThemeProvider
             attribute="class"

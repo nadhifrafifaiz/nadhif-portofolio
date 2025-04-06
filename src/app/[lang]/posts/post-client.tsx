@@ -9,11 +9,11 @@ export default function PostClient({ posts }: { posts: MediumPost[] }) {
   const dictionary = useDictionary();
 
   return (
-    <div>
+    <div className="pb-8 lg:pb-20">
       <p className="pb-8 font-playfair text-4xl font-semibold text-text-color lg:pb-20 lg:text-center lg:text-title">
         {dictionary.navbar.posts}
       </p>
-      <div className="m-auto flex flex-col gap-8 lg:w-[50%] lg:gap-8">
+      <div className="m-auto flex flex-col gap-8 lg:w-[50%] lg:gap-12">
         {posts.map((post, index) => {
           return (
             <motion.div
