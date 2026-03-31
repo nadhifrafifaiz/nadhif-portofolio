@@ -7,6 +7,7 @@ import { epilogue, open_sans, playfair_display } from "../fonts";
 import { getDictionary } from "@/get-dictionary";
 import DictionaryProvider from "@/dictionaries/dictionary-provider";
 import dynamic from "next/dynamic";
+import Script from "next/script";
 import { THEMES_SELECTIONS } from "@/utils/themes";
 import Footer from "../../components/footer";
 import { jsonLdPerson } from "@/constant/metadata";
@@ -32,6 +33,16 @@ export default async function RootLayout({
       className={`${epilogue.variable} ${open_sans.variable} ${playfair_display.variable}`}
     >
       <head>
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-2074778696835838"
+        />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2074778696835838"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
