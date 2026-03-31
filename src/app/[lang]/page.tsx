@@ -4,6 +4,7 @@ import HomepageHero from "./homepage/components/homepage-hero";
 import HomepagePosts from "./homepage/components/homepage-posts";
 import { Suspense } from "react";
 import { getMetadata } from "@/constant/metadata";
+import HomepageBannerAd from "@/components/adsense/homepage-banner";
 
 export const metadata: Metadata = getMetadata({ type: "home", path: "/" });
 
@@ -23,6 +24,7 @@ export default async function Home(props: {
       >
         <HomepagePosts lang={lang} />
       </Suspense>
+      <HomepageBannerAd />
     </div>
   );
 }
